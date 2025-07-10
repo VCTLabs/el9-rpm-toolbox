@@ -1,0 +1,86 @@
+name: RPMs
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  get_version:
+    name: Get version info
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    defaults:
+      run:
+        shell: bash
+    outputs:
+      version: ${{ steps.git_ver.outputs.version }}
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Get package version
+        id: git_ver
+        run: |
+          version=$(make version)
+          echo "Version from git: ${version}"
+          echo "version=${version}" >> $GITHUB_OUTPUT
+        env:
+          NAME: python-diskcache
+
+  build_rpms:
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        name: [centos9, rocky9]
+        include:
+          - name: centos9
+            spec: python-diskcache
+            image: quay.io/centos/centos:stream9
+          - name: rocky9
+            spec: python-diskcache
+            image: quay.io/rockylinux/rockylinux:9
+
+    runs-on: ubuntu-latest
+    needs: [get_version]
+    container:
+      image: ${{ matrix.image }}
+    permissions:
+      contents: read
+    defaults:
+      run:
+        shell: bash
+    env:
+      PYTHONIOENCODING: utf-8
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    # Work-around for https://github.com/actions/runner-images/issues/6775
+    - name: Change Owner of Container Working Directory
+      if: matrix.image
+      run: chown root.root .
+
+    - name: Install deps for rpm builds (centos/rocky)
+      run: |
+        bash scripts/install_deps_el9.sh
+
+    - name: Build bdist_rpm pkgs
+      run: |
+        NAME="${{ matrix.spec }}" make packages
+
+    - name: Upload rpm files
+      uses: actions/upload-artifact@v4
+      with:
+        name: "${{ matrix.spec }}-${{ needs.get_version.outputs.version }}.${{ matrix.name }}-rpms"
+        path: |
+          tmp/RPMS/*/*.rpm
+          tmp/SRPMS/*.rpm

@@ -8,32 +8,8 @@ on:
       - master
 
 jobs:
-  get_version:
-    name: Get version info
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-    defaults:
-      run:
-        shell: bash
-    outputs:
-      version: ${{ steps.git_ver.outputs.version }}
-
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Get package version
-        id: git_ver
-        run: |
-          version=$(make version)
-          echo "Version from git: ${version}"
-          echo "version=${version}" >> $GITHUB_OUTPUT
-        env:
-          NAME: python-diskcache
-
   build_rpms:
+    name: diskcache-rpms
     timeout-minutes: 30
     strategy:
       fail-fast: false
@@ -48,7 +24,6 @@ jobs:
             image: quay.io/rockylinux/rockylinux:9
 
     runs-on: ubuntu-latest
-    needs: [get_version]
     container:
       image: ${{ matrix.image }}
     permissions:
@@ -73,6 +48,15 @@ jobs:
       run: |
         bash scripts/install_deps_el9.sh
 
+    - name: Get package version
+      id: spec_ver
+      run: |
+        version=$(make version)
+        echo "VERSION=${version}" >> $GITHUB_ENV
+        echo Version from spec: ${{ env.VERSION }}
+      env:
+        NAME: ${{ matrix.spec }}"
+
     - name: Build bdist_rpm pkgs
       run: |
         NAME="${{ matrix.spec }}" make packages
@@ -80,7 +64,7 @@ jobs:
     - name: Upload rpm files
       uses: actions/upload-artifact@v4
       with:
-        name: "${{ matrix.spec }}-${{ needs.get_version.outputs.version }}.${{ matrix.name }}-rpms"
+        name: "${{ matrix.spec }}-${{ env.VERSION }}.${{ matrix.name }}-rpms"
         path: |
           tmp/RPMS/*/*.rpm
           tmp/SRPMS/*.rpm

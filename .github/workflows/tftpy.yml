@@ -1,4 +1,4 @@
-name: RPMs
+name: tftpy RPMs
 
 on:
   workflow_dispatch:

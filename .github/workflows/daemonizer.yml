@@ -1,4 +1,4 @@
-name: RPMs
+name: daemonizer RPMs
 
 on:
   workflow_dispatch:

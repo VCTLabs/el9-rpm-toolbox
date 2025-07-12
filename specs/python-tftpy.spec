@@ -22,8 +22,11 @@ This module is a pure Python implementation of the TFTP protocol, RFCs 1350,
 Summary:        %{summary}
 
 BuildRequires:  python%{python3_pkgversion}-devel
+BuildRequires:  pyproject-rpm-macros
+BuildRequires:  python%{python3_pkgversion}dist(tomli)
 BuildRequires:  python%{python3_pkgversion}dist(wheel)
 BuildRequires:  python%{python3_pkgversion}dist(setuptools)
+BuildRequires:  python%{python3_pkgversion}dist(setuptools-scm[toml])
 %if %{with tests}
 BuildRequires:  python%{python3_pkgversion}dist(pytest)
 %endif
@@ -35,27 +38,35 @@ This module is a pure Python implementation of the TFTP protocol, RFCs 1350,
 2347, 2348 and the tsize option from 2349.
 
 %prep
-%autosetup -n %{pypi_name}-%{version}
-rm -rf %{pypi_name}.egg-info
+%autosetup -p1 -n %{pypi_name}-%{version}
+
+# using pyproject macros
+%generate_buildrequires
+export SETUPTOOLS_SCM_PRETEND_VERSION=%{version}
+%pyproject_buildrequires
 
 %build
-%py3_build
+export SETUPTOOLS_SCM_PRETEND_VERSION=%{version}
+%pyproject_wheel
 
 %install
-%py3_install
+%pyproject_install
+
+# Use -l to assert a %%license file is found (PEP 639).
+# note the last argument is the top-level module directory name
+%pyproject_save_files -l tftpy
 
 %check
+%pyproject_check_import
 %if %{with tests}
-%pytest -vv tests/
+%pytest -vv test/
 %endif
 
-%files -n python3-%{pypi_name}
-%license LICENSE
+%files -n python%{python3_pkgversion}-tftpy -f %{pyproject_files}
 %doc README.md ChangeLog.md
-%{python3_sitelib}/%{pypi_name}/
-%{python3_sitelib}/%{pypi_name}-%{version}-py*.egg-info/
+%license LICENSE
 %{_bindir}/*.py
 
 %changelog
-* Fri Jul 11 2025 Stephen Arnold <nerdboy@gentoo.org> - 0.8.6
+* Sat Jul 12 2025 Stephen Arnold <nerdboy@gentoo.org> - 0.8.6.1
 - New package

@@ -56,6 +56,7 @@ export SETUPTOOLS_SCM_PRETEND_VERSION=%{version}
 %pyproject_install
 
 # Use -l to assert a %%license file is found (PEP 639).
+# note the last argument is the top-level module directory name
 %pyproject_save_files -l daemonizer
 
 %check
@@ -69,5 +70,5 @@ export SETUPTOOLS_SCM_PRETEND_VERSION=%{version}
 %license LICENSES REUSE.toml
 
 %changelog
-* Sun Jun 29 2025 Stephen Arnold <nerdboy@gentoo.org> - 1.1.2
+* Sat Jul 12 2025 Stephen Arnold <nerdboy@gentoo.org> - 1.1.3
 - Initial package

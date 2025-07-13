@@ -130,7 +130,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         tag_name: diskcache-${{ needs.get_version.outputs.version }}
-        name: Release diskcache-${{ needs.get_version.outputs.version }}
+        name: RPM Release diskcache-${{ needs.get_version.outputs.version }}
         body: Latest RPMs for diskcache-${{ needs.get_version.outputs.version }}
         draft: false
         prerelease: false

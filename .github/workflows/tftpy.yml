@@ -1,0 +1,70 @@
+name: tftpy RPMs
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  build_rpms:
+    name: tftpy-rpms
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        name: [centos9, rocky9]
+        include:
+          - name: centos9
+            spec: python-tftpy
+            image: quay.io/centos/centos:stream9
+          - name: rocky9
+            spec: python-tftpy
+            image: quay.io/rockylinux/rockylinux:9
+
+    runs-on: ubuntu-latest
+    container:
+      image: ${{ matrix.image }}
+    permissions:
+      contents: read
+    defaults:
+      run:
+        shell: bash
+    env:
+      PYTHONIOENCODING: utf-8
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    # Work-around for https://github.com/actions/runner-images/issues/6775
+    - name: Change Owner of Container Working Directory
+      if: matrix.image
+      run: chown root.root .
+
+    - name: Install deps for rpm builds (centos/rocky)
+      run: |
+        bash scripts/install_deps_el9.sh
+
+    - name: Get package version
+      id: spec_ver
+      run: |
+        version=$(make version)
+        echo "VERSION=${version}" >> $GITHUB_ENV
+        echo Version from spec: ${{ env.VERSION }}
+      env:
+        NAME: ${{ matrix.spec }}"
+
+    - name: Build bdist_rpm pkgs
+      run: |
+        NAME="${{ matrix.spec }}" make packages
+
+    - name: Upload rpm files
+      uses: actions/upload-artifact@v4
+      with:
+        name: "${{ matrix.spec }}-${{ env.VERSION }}.${{ matrix.name }}-rpms"
+        path: |
+          tmp/RPMS/*/*.rpm
+          tmp/SRPMS/*.rpm

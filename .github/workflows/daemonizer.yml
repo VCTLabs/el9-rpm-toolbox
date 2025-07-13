@@ -53,9 +53,9 @@ jobs:
       run: |
         version=$(make version)
         echo "VERSION=${version}" >> $GITHUB_ENV
-        echo Version from spec: ${{ env.VERSION }}
+        echo Version from spec: $version
       env:
-        NAME: ${{ matrix.spec }}"
+        NAME: ${{ matrix.spec }}
 
     - name: Build bdist_rpm pkgs
       run: |

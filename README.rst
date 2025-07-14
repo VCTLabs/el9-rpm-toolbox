@@ -24,4 +24,12 @@ section. This repo is intended primarily for Python project dependencies;
 issues requesting new packages will be considered based on time available,
 however, Pull Requests are the preferred mechanism for contributions.
 
+Look in the releases for the latest versioned RPMs for each of the
+following::
+
+    $ tree -a specs/
+    specs/
+    ├── python-daemonizer.spec
+    ├── python-diskcache.spec
+    └── python-tftpy.spec
 

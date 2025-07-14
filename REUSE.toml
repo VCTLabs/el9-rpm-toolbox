@@ -6,3 +6,8 @@ SPDX-FileCopyrightText = [
     "2025 Stephen Arnold <sarnold@vctlabs.com>",
 ]
 SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = "toxfile.py"
+SPDX-FileCopyrightText = "Copyright (c) 2023 Masen Furer"
+SPDX-License-Identifier = "MIT"

@@ -7,7 +7,8 @@
 Name:           python-%{pypi_name}
 Version:        2.0.0.1
 Release:        1%{?dist}
-Summary:        A pure python TFTP library
+Summary:        A Python clone of Foreman, a tool for managing Procfile-based
+                applications.
 
 License:        MIT
 URL:            http://github.com/VCTLabs/honcho
@@ -15,8 +16,8 @@ Source0:        %{url}/releases/download/v%{version}/%{pypi_name}-%{version}.tar
 BuildArch:      noarch
 
 %description
-This module is a pure Python implementation of the TFTP protocol, RFCs 1350,
-2347, 2348 and the tsize option from 2349.
+For more detail and an explanation of the circumstances in which Honcho might
+be useful, consult https://honcho.readthedocs.io/
 
 %package -n     python%{python3_pkgversion}-%{pypi_name}
 Summary:        %{summary}
@@ -36,8 +37,8 @@ BuildRequires:  python%{python3_pkgversion}dist(pytest)
 %{?python_provide:%python_provide python%{python3_pkgversion}-%{pypi_name}}
 
 %description -n python%{python3_pkgversion}-%{pypi_name}
-This module is a pure Python implementation of the TFTP protocol, RFCs 1350,
-2347, 2348 and the tsize option from 2349.
+For more detail and an explanation of the circumstances in which Honcho might
+be useful, consult https://honcho.readthedocs.io/
 
 %prep
 %autosetup -p1 -n %{pypi_name}-%{version}

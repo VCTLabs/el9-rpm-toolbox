@@ -24,12 +24,11 @@ section. This repo is intended primarily for Python project dependencies;
 issues requesting new packages will be considered based on time available,
 however, Pull Requests are the preferred mechanism for contributions.
 
-Look in the releases for the latest versioned RPMs for each of the
-following::
+Look in the releases for the latest versioned RPMs for each spec in the
+following table.
 
-    $ tree -a specs/
-    specs/
-    ├── python-daemonizer.spec
-    ├── python-diskcache.spec
-    └── python-tftpy.spec
-
+:daemonizer: https://sarnold.github.io/python-daemonizer/
+:diskcache: http://www.grantjenks.com/docs/diskcache/
+:honcho: https://honcho.readthedocs.io/
+:procman: https://sarnold.github.io/procman/
+:tftpy: https://msoulier.github.io/tftpy/pages/html/

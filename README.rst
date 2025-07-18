@@ -30,7 +30,9 @@ following table.
 :daemonizer: https://sarnold.github.io/python-daemonizer/
 :diskcache: http://www.grantjenks.com/docs/diskcache/
 :honcho: https://honcho.readthedocs.io/
+:picotui: https://sarnold.github.io/picotui/
 :procman: https://sarnold.github.io/procman/
+:pygtail: https://github.com/VCTLabs/pygtail
 :pyprctrl: https://pyprctl.readthedocs.io/en/latest
 :stoppy: https://github.com/morefigs/stoppy
 :timed-count: https://github.com/morefigs/timed-count

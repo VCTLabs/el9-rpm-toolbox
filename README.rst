@@ -31,4 +31,5 @@ following table.
 :diskcache: http://www.grantjenks.com/docs/diskcache/
 :honcho: https://honcho.readthedocs.io/
 :procman: https://sarnold.github.io/procman/
+:pyprctrl: https://pyprctl.readthedocs.io/en/latest
 :tftpy: https://msoulier.github.io/tftpy/pages/html/

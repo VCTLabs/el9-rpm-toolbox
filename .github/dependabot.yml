@@ -1,0 +1,19 @@
+version: 2
+updates:
+  # Maintain dependencies for GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    commit-message:
+      prefix: "ci:"
+    labels: ["actions"]
+    # only needed for non-default branch
+    #target-branch: "develop"
+    groups:
+      all-actions:
+        patterns: [ "*" ]
+    ignore:
+      - dependency-name: "anothrNick/github-tag-action*"
+        # Ignore version v2
+        update-types: ["version-update:semver-major"]

@@ -32,4 +32,6 @@ following table.
 :honcho: https://honcho.readthedocs.io/
 :procman: https://sarnold.github.io/procman/
 :pyprctrl: https://pyprctl.readthedocs.io/en/latest
+:stoppy: https://github.com/morefigs/stoppy
+:timed-count: https://github.com/morefigs/timed-count
 :tftpy: https://msoulier.github.io/tftpy/pages/html/

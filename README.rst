@@ -32,6 +32,7 @@ following table.
 :honcho: https://honcho.readthedocs.io/
 :picotui: https://sarnold.github.io/picotui/
 :procman: https://sarnold.github.io/procman/
+:py3tftp: https://github.com/sirMackk/py3tftp
 :pygtail: https://github.com/VCTLabs/pygtail
 :pyprctrl: https://pyprctl.readthedocs.io/en/latest
 :stoppy: https://github.com/morefigs/stoppy

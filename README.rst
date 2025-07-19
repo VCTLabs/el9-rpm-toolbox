@@ -27,14 +27,67 @@ however, Pull Requests are the preferred mechanism for contributions.
 Look in the releases for the latest versioned RPMs for each spec in the
 following table.
 
-:daemonizer: https://sarnold.github.io/python-daemonizer/
-:diskcache: http://www.grantjenks.com/docs/diskcache/
-:honcho: https://honcho.readthedocs.io/
-:picotui: https://sarnold.github.io/picotui/
-:procman: https://sarnold.github.io/procman/
-:py3tftp: https://github.com/sirMackk/py3tftp
-:pygtail: https://github.com/VCTLabs/pygtail
-:pyprctrl: https://pyprctl.readthedocs.io/en/latest
-:stoppy: https://github.com/morefigs/stoppy
-:timed-count: https://github.com/morefigs/timed-count
-:tftpy: https://msoulier.github.io/tftpy/pages/html/
+
+.. table:: RPM build status
+   :widths: auto
+
+   =============  ===============
+    Package        Status
+   =============  ===============
+    daemonizer     |daemonizer|
+    diskcache      |diskcache|
+    honcho         |honcho|
+    picotui        |picotui|
+    procman        |procman|
+    py3tftp        |py3tftp|
+    pygtail        |pygtail|
+    pyprctrl       |pyprctrl|
+    stoppy         |stoppy|
+    timed-count    |timed-count|
+    tftpy          |tftpy|
+   =============  ===============
+
+
+.. |daemonizer| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/daemonizer.yml/badge.svg
+    :target: https://sarnold.github.io/python-daemonizer/
+    :alt: daemonizer RPM status
+
+.. |diskcache| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/diskcache.yml/badge.svg
+    :target: http://www.grantjenks.com/docs/diskcache/
+    :alt: diskcache RPM status
+
+.. |honcho| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/honcho.yml/badge.svg
+    :target: https://honcho.readthedocs.io/
+    :alt: honcho RPM status
+
+.. |picotui| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/picotui.yml/badge.svg
+    :target: https://sarnold.github.io/picotui/
+    :alt: picotui RPM status
+
+.. |procman| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/procman.yml/badge.svg
+    :target: https://sarnold.github.io/procman/
+    :alt: procman RPM status
+
+.. |py3tftp| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/py3tftp.yml/badge.svg
+    :target: https://github.com/sirMackk/py3tftp
+    :alt: py3tftp RPM status
+
+.. |pygtail| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/pygtail.yml/badge.svg
+    :target: https://github.com/VCTLabs/pygtail
+    :alt: pygtail RPM status
+
+.. |pyprctrl| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/pyprctrl.yml/badge.svg
+    :target: https://pyprctl.readthedocs.io/en/latest
+    :alt: pyprctrl RPM status
+
+.. |stoppy| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/stoppy.yml/badge.svg
+    :target: https://github.com/morefigs/stoppy
+    :alt: stoppy RPM status
+
+.. |timed-count| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/timed-count.yml/badge.svg
+    :target: https://github.com/morefigs/timed-count
+    :alt: timed-count RPM status
+
+.. |tftpy| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/tftpy.yml/badge.svg
+    :target: https://msoulier.github.io/tftpy/pages/html/
+    :alt: tftpy RPM status

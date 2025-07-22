@@ -42,6 +42,7 @@ following table.
     py3tftp        |py3tftp|
     pygtail        |pygtail|
     pyprctrl       |pyprctrl|
+    pyserv         |pyserv|
     stoppy         |stoppy|
     timed-count    |timed-count|
     tftpy          |tftpy|
@@ -79,6 +80,10 @@ following table.
 .. |pyprctrl| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/pyprctrl.yml/badge.svg
     :target: https://pyprctl.readthedocs.io/en/latest
     :alt: pyprctrl RPM status
+
+.. |pyserv| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/pyserv.yml/badge.svg
+    :target: https://sarnold.github.io/pyserv/
+    :alt: pyserv RPM status
 
 .. |stoppy| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/stoppy.yml/badge.svg
     :target: https://github.com/morefigs/stoppy

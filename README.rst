@@ -36,6 +36,7 @@ following table.
    =============  ===============
     daemonizer     |daemonizer|
     diskcache      |diskcache|
+    hexdump        |hexdump|
     honcho         |honcho|
     picotui        |picotui|
     procman        |procman|
@@ -56,6 +57,10 @@ following table.
 .. |diskcache| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/diskcache.yml/badge.svg
     :target: http://www.grantjenks.com/docs/diskcache/
     :alt: diskcache RPM status
+
+.. |hexdump| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/hexdump.yml/badge.svg
+    :target: https://sarnold.github.io/hexdump/
+    :alt: hexdump RPM status
 
 .. |honcho| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/honcho.yml/badge.svg
     :target: https://honcho.readthedocs.io/

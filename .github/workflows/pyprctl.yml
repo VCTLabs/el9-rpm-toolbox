@@ -1,4 +1,4 @@
-name: pyprctrl RPMs
+name: pyprctl RPMs
 
 on:
   workflow_dispatch:
@@ -31,10 +31,10 @@ jobs:
           echo "version=${version}" >> $GITHUB_OUTPUT
           echo Version from spec: $version
         env:
-          NAME: python-pyprctrl
+          NAME: python-pyprctl
 
   build_rpms:
-    name: pyprctrl-rpms
+    name: pyprctl-rpms
     timeout-minutes: 30
     strategy:
       fail-fast: false
@@ -42,7 +42,7 @@ jobs:
         name: [rocky9]
         include:
           - name: rocky9
-            spec: python-pyprctrl
+            spec: python-pyprctl
             image: quay.io/rockylinux/rockylinux:9
 
     runs-on: ubuntu-latest
@@ -90,7 +90,7 @@ jobs:
           tmp/SRPMS/*.rpm
 
   create-release:
-    name: Create pyprctrl Release
+    name: Create pyprctl Release
     runs-on: ubuntu-latest
     needs: [get_version, build_rpms]
     permissions:
@@ -113,12 +113,12 @@ jobs:
       if: ${{ github.event_name != 'pull_request' }}
       run: |
         set +e
-        if git rev-list "pyprctrl-${{ needs.get_version.outputs.version }}" >/dev/null 2>&1 ; then
-          echo "Tag for pyprctrl-${{ needs.get_version.outputs.version }} already exists. Skipping release creation."
+        if git rev-list "pyprctl-${{ needs.get_version.outputs.version }}" >/dev/null 2>&1 ; then
+          echo "Tag for pyprctl-${{ needs.get_version.outputs.version }} already exists. Skipping release creation."
           echo "NEW_RELEASE=false" >> $GITHUB_OUTPUT
         else
-          git tag "pyprctrl-${{ needs.get_version.outputs.version }}"
-          git push origin "pyprctrl-${{ needs.get_version.outputs.version }}"
+          git tag "pyprctl-${{ needs.get_version.outputs.version }}"
+          git push origin "pyprctl-${{ needs.get_version.outputs.version }}"
           echo "NEW_RELEASE=true" >> $GITHUB_OUTPUT
         fi
 
@@ -129,9 +129,9 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: pyprctrl-${{ needs.get_version.outputs.version }}
-        name: RPM Release pyprctrl-${{ needs.get_version.outputs.version }}
-        body: Latest RPMs for pyprctrl-${{ needs.get_version.outputs.version }}
+        tag_name: pyprctl-${{ needs.get_version.outputs.version }}
+        name: RPM Release pyprctl-${{ needs.get_version.outputs.version }}
+        body: Latest RPMs for pyprctl-${{ needs.get_version.outputs.version }}
         draft: false
         prerelease: false
         files: |

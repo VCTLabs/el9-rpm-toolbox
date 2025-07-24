@@ -42,7 +42,7 @@ following table.
     procman        |procman|
     py3tftp        |py3tftp|
     pygtail        |pygtail|
-    pyprctrl       |pyprctrl|
+    pyprctl        |pyprctl|
     pyserv         |pyserv|
     stoppy         |stoppy|
     timed-count    |timed-count|
@@ -82,9 +82,9 @@ following table.
     :target: https://github.com/VCTLabs/pygtail
     :alt: pygtail RPM status
 
-.. |pyprctrl| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/pyprctrl.yml/badge.svg
+.. |pyprctl| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/pyprctl.yml/badge.svg
     :target: https://pyprctl.readthedocs.io/en/latest
-    :alt: pyprctrl RPM status
+    :alt: pyprctl RPM status
 
 .. |pyserv| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/pyserv.yml/badge.svg
     :target: https://sarnold.github.io/pyserv/

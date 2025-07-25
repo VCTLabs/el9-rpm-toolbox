@@ -5,7 +5,7 @@
 %global pypi_name diskcache
 
 Name:           python-%{pypi_name}
-Version:        4.1.0
+Version:        5.6.3
 Release:        2%{?dist}
 Summary:        Disk and file backed persistent cache
 
@@ -59,6 +59,9 @@ rm -rf %{pypi_name}.egg-info
 %{python3_sitelib}/%{pypi_name}-%{version}-py*.egg-info/
 
 %changelog
+* Thu Jul 24 2025 Stephen Arnold <nerdboy@gentoo.org> - 5.6.3
+- big version bump
+
 * Sun Jan 26 2020 Fabian Affolter <mail@fabian-affolter.ch> - 4.1.0-2
 - Address issues (rhbz#1795068)
 

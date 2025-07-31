@@ -5,7 +5,7 @@
 %global pypi_name procman
 
 Name:           python-%{pypi_name}
-Version:        0.6.0
+Version:        0.6.1
 Release:        1%{?dist}
 Summary:        Console tool for running multiple external processes and multiplexing their output
 
@@ -77,5 +77,7 @@ export SETUPTOOLS_SCM_PRETEND_VERSION=%{version}
 %{_bindir}/procman
 
 %changelog
-* Mon Jul 14 2025 Stephen Arnold <nerdboy@gentoo.org> - 2.0.0.1
+* Thu Jul 31 2025 Stephen Arnold <nerdboy@gentoo.org> - 0.6.1
+- prefix update
+* Mon Jul 14 2025 Stephen Arnold <nerdboy@gentoo.org> - 0.6.0
 - New package

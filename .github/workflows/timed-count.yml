@@ -102,9 +102,12 @@ jobs:
 
     - name: Download Artifacts
       uses: actions/download-artifact@v4
+      with:
+        name: packages
+        path: packages
 
     - name: List Artifacts
-      run: ls -laR packages
+      run: find . -maxdepth 3 -name \*.rpm
 
     - name: Fetch tags
       run: git fetch --tags --prune --quiet

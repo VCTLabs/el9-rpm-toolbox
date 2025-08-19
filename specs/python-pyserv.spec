@@ -5,7 +5,7 @@
 %global pypi_name pyserv
 
 Name:           python-%{pypi_name}
-Version:        1.8.6
+Version:        1.8.7
 Release:        1%{?dist}
 Summary:        Threaded wsgi, http, tftp server classes, entry points and daemon scripts.
 
@@ -80,6 +80,10 @@ export SETUPTOOLS_SCM_PRETEND_VERSION=%{version}
 %{_bindir}/*
 
 %changelog
+* Tue Aug 19 2025 Stephen Arnold <nerdboy@gentoo.org> - 1.8.7
+- New upstream release
+* Fri Aug 15 2025 Stephen Arnold <nerdboy@gentoo.org> - 1.8.6
+- New upstream release
 * Sat Aug 09 2025 Stephen Arnold <nerdboy@gentoo.org> - 1.8.5
 - New upstream release
 * Mon Jul 21 2025 Stephen Arnold <nerdboy@gentoo.org> - 1.8.4

@@ -5,7 +5,7 @@
 %global pypi_name procman
 
 Name:           python-%{pypi_name}
-Version:        0.6.1
+Version:        0.6.2
 Release:        1%{?dist}
 Summary:        Console tool for running multiple external processes and multiplexing their output
 

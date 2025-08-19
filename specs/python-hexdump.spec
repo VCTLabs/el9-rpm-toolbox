@@ -5,7 +5,7 @@
 %global pypi_name hexdump
 
 Name:           python-%{pypi_name}
-Version:        3.5.2
+Version:        3.5.3
 Release:        1%{?dist}
 Summary:        view/edit your binary with any text editor.
 
@@ -72,5 +72,7 @@ export SETUPTOOLS_SCM_PRETEND_VERSION=%{version}
 %{_bindir}/hexdump
 
 %changelog
+* Mon Aug 18 2025 Stephen Arnold <nerdboy@gentoo.org> - 3.5.3
+- New upstream release
 * Mon Jul 21 2025 Stephen Arnold <nerdboy@gentoo.org> - 3.5.2
 - New package

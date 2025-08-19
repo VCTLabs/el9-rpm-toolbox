@@ -72,7 +72,7 @@ export SETUPTOOLS_SCM_PRETEND_VERSION=%{version}
 %license LICENSE REUSE.toml
 
 %changelog
-* Mon Aug 19 2025 Stephen Arnold <nerdboy@gentoo.org> - 1.2.3.2
+* Tue Aug 19 2025 Stephen Arnold <nerdboy@gentoo.org> - 1.2.3.2
 - patch release for metadata fix
 * Mon Jul 21 2025 Stephen Arnold <nerdboy@gentoo.org> - 1.2.3.1
 - patch release for metadata fix

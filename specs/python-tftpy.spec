@@ -5,7 +5,7 @@
 %global pypi_name tftpy
 
 Name:           python-%{pypi_name}
-Version:        0.8.6.1
+Version:        0.8.6.2
 Release:        1%{?dist}
 Summary:        A pure python TFTP library
 
@@ -68,5 +68,7 @@ export SETUPTOOLS_SCM_PRETEND_VERSION=%{version}
 %{_bindir}/*.py
 
 %changelog
+* Tue Aug 19 2025 Stephen Arnold <nerdboy@gentoo.org> - 0.8.6.2
+- New upstream release
 * Sat Jul 12 2025 Stephen Arnold <nerdboy@gentoo.org> - 0.8.6.1
 - New package

@@ -5,7 +5,7 @@
 %global pypi_name honcho
 
 Name:           python-%{pypi_name}
-Version:        2.0.0.1
+Version:        2.0.0.2
 Release:        1%{?dist}
 Summary:        A Python clone of Foreman, a tool for managing Procfile-based applications.
 

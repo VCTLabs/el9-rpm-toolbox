@@ -5,7 +5,7 @@
 %global pypi_name picotui
 
 Name:           python-%{pypi_name}
-Version:        1.2.3.1
+Version:        1.2.3.2
 Release:        1%{?dist}
 Summary:        Lightweight, pure-Python Text User Interface (TUI) widget toolkit.
 
@@ -72,6 +72,8 @@ export SETUPTOOLS_SCM_PRETEND_VERSION=%{version}
 %license LICENSE REUSE.toml
 
 %changelog
+* Mon Aug 19 2025 Stephen Arnold <nerdboy@gentoo.org> - 1.2.3.2
+- patch release for metadata fix
 * Mon Jul 21 2025 Stephen Arnold <nerdboy@gentoo.org> - 1.2.3.1
 - patch release for metadata fix
 * Fri Jul 18 2025 Stephen Arnold <nerdboy@gentoo.org> - 1.2.3

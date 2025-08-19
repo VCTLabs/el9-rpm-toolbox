@@ -5,7 +5,7 @@
 %global pypi_name pygtail
 
 Name:           python-%{pypi_name}
-Version:        0.14.0.2
+Version:        0.14.0.3
 Release:        1%{?dist}
 Summary:        Pygtail reads log file lines that have not been read.
 
@@ -70,5 +70,7 @@ export SETUPTOOLS_SCM_PRETEND_VERSION=%{version}
 %{_bindir}/pygtail
 
 %changelog
+* Tue Aug 19 2025 Stephen Arnold <nerdboy@gentoo.org> - 0.14.0.3
+- New upstream release
 * Fri Jul 18 2025 Stephen Arnold <nerdboy@gentoo.org> - 0.14.0.2
 - New package

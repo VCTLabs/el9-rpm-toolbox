@@ -6,7 +6,7 @@
 
 Name:           python-%{pypi_name}
 Version:        3.5.3
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        view/edit your binary with any text editor.
 
 License:        LGPL-2.1-or-later
@@ -45,11 +45,9 @@ Linux, Windows, MacOS, using any non-ancient Python 3 release.
 
 # using pyproject macros
 %generate_buildrequires
-export SETUPTOOLS_SCM_PRETEND_VERSION=%{version}
 %pyproject_buildrequires
 
 %build
-export SETUPTOOLS_SCM_PRETEND_VERSION=%{version}
 %pyproject_wheel
 
 %install
@@ -72,6 +70,8 @@ export SETUPTOOLS_SCM_PRETEND_VERSION=%{version}
 %{_bindir}/hexdump
 
 %changelog
+* Wed Sep 03 2025 Stephen Arnold <nerdboy@gentoo.org> - 3.5.3
+- Bump package release number for spec change
 * Mon Aug 18 2025 Stephen Arnold <nerdboy@gentoo.org> - 3.5.3
 - New upstream release
 * Mon Jul 21 2025 Stephen Arnold <nerdboy@gentoo.org> - 3.5.2

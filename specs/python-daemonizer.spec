@@ -6,7 +6,7 @@
 
 Name:           python-%{srcname}
 Version:        1.1.4
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Python daemonizer for Unix, Linux and OS X
 
 License:        CC-BY-SA-3.0
@@ -45,11 +45,9 @@ foreground mode.
 
 # using pyproject macros
 %generate_buildrequires
-export SETUPTOOLS_SCM_PRETEND_VERSION=%{version}
 %pyproject_buildrequires
 
 %build
-export SETUPTOOLS_SCM_PRETEND_VERSION=%{version}
 %pyproject_wheel
 
 %install
@@ -70,5 +68,7 @@ export SETUPTOOLS_SCM_PRETEND_VERSION=%{version}
 %license LICENSES REUSE.toml
 
 %changelog
+* Sat Jul 12 2025 Stephen Arnold <nerdboy@gentoo.org> - 1.1.3
+- Bump package release number for spec change
 * Sat Jul 12 2025 Stephen Arnold <nerdboy@gentoo.org> - 1.1.3
 - Initial package

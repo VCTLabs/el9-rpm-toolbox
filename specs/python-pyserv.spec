@@ -6,7 +6,7 @@
 
 Name:           python-%{pypi_name}
 Version:        1.8.7
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Threaded wsgi, http, tftp server classes, entry points and daemon scripts.
 
 License:        MIT
@@ -54,11 +54,9 @@ async daemon script based on the py3tftp package.
 
 # using pyproject macros
 %generate_buildrequires
-export SETUPTOOLS_SCM_PRETEND_VERSION=%{version}
 %pyproject_buildrequires
 
 %build
-export SETUPTOOLS_SCM_PRETEND_VERSION=%{version}
 %pyproject_wheel
 
 %install

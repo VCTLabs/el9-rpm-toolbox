@@ -6,7 +6,7 @@
 
 Name:           python-%{pypi_name}
 Version:        2.0.0.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A Python clone of Foreman, a tool for managing Procfile-based applications.
 
 License:        MIT
@@ -44,11 +44,9 @@ be useful, consult https://honcho.readthedocs.io/
 
 # using pyproject macros
 %generate_buildrequires
-export SETUPTOOLS_SCM_PRETEND_VERSION=%{version}
 %pyproject_buildrequires
 
 %build
-export SETUPTOOLS_SCM_PRETEND_VERSION=%{version}
 %pyproject_wheel
 
 %install

@@ -6,7 +6,7 @@
 
 Name:           python-%{pypi_name}
 Version:        0.14.0.3
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Pygtail reads log file lines that have not been read.
 
 License:        MIT
@@ -44,11 +44,9 @@ log files that have been rotated. Based on logcheck's logtail2.
 
 # using pyproject macros
 %generate_buildrequires
-export SETUPTOOLS_SCM_PRETEND_VERSION=%{version}
 %pyproject_buildrequires
 
 %build
-export SETUPTOOLS_SCM_PRETEND_VERSION=%{version}
 %pyproject_wheel
 
 %install

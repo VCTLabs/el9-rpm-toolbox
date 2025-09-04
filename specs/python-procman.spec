@@ -6,7 +6,7 @@
 
 Name:           python-%{pypi_name}
 Version:        0.6.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Console tool for running multiple external processes and multiplexing their output
 
 License:        LGPL-2.1-or-later
@@ -50,11 +50,9 @@ if any one of the running processes stops or dies on its own.
 
 # using pyproject macros
 %generate_buildrequires
-export SETUPTOOLS_SCM_PRETEND_VERSION=%{version}
 %pyproject_buildrequires
 
 %build
-export SETUPTOOLS_SCM_PRETEND_VERSION=%{version}
 %pyproject_wheel
 
 %install

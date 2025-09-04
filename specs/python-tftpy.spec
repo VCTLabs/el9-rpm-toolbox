@@ -6,7 +6,7 @@
 
 Name:           python-%{pypi_name}
 Version:        0.8.6.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A pure python TFTP library
 
 License:        MIT
@@ -42,11 +42,9 @@ This module is a pure Python implementation of the TFTP protocol, RFCs 1350,
 
 # using pyproject macros
 %generate_buildrequires
-export SETUPTOOLS_SCM_PRETEND_VERSION=%{version}
 %pyproject_buildrequires
 
 %build
-export SETUPTOOLS_SCM_PRETEND_VERSION=%{version}
 %pyproject_wheel
 
 %install

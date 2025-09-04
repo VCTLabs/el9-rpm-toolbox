@@ -6,7 +6,7 @@
 
 Name:           python-%{pypi_name}
 Version:        1.2.3.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Lightweight, pure-Python Text User Interface (TUI) widget toolkit.
 
 License:        LGPL-2.1-or-later
@@ -46,11 +46,9 @@ access to the stdin/stdout file descriptors.
 
 # using pyproject macros
 %generate_buildrequires
-export SETUPTOOLS_SCM_PRETEND_VERSION=%{version}
 %pyproject_buildrequires
 
 %build
-export SETUPTOOLS_SCM_PRETEND_VERSION=%{version}
 %pyproject_wheel
 
 %install

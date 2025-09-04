@@ -5,8 +5,8 @@
 %global srcname daemonizer
 
 Name:           python-%{srcname}
-Version:        1.1.4
-Release:        2%{?dist}
+Version:        1.1.5
+Release:        1%{?dist}
 Summary:        Python daemonizer for Unix, Linux and OS X
 
 License:        CC-BY-SA-3.0
@@ -68,6 +68,8 @@ foreground mode.
 %license LICENSES REUSE.toml
 
 %changelog
+* Wed Sep 04 2025 Stephen Arnold <nerdboy@gentoo.org> - 1.1.5
+- update version handling and packaging for el9 sbom
 * Sat Jul 12 2025 Stephen Arnold <nerdboy@gentoo.org> - 1.1.3
 - Bump package release number for spec change
 * Sat Jul 12 2025 Stephen Arnold <nerdboy@gentoo.org> - 1.1.3

@@ -27,6 +27,11 @@ however, Pull Requests are the preferred mechanism for contributions.
 Look in the releases for the latest versioned RPMs for each spec in the
 following table.
 
+Note the example configuration for RPMGet_ contains the URLs for all
+toolbox rpms (which you can use to download them to an install target
+or RPM repo host).
+
+.. _RPMGet: https://github.com/sarnold/rpmget
 
 .. table:: RPM build status
    :widths: auto

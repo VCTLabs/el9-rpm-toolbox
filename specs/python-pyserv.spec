@@ -6,7 +6,7 @@
 
 Name:           python-%{pypi_name}
 Version:        1.8.7
-Release:        2%{?dist}
+Release:        1%{?dist}
 Summary:        Threaded wsgi, http, tftp server classes, entry points and daemon scripts.
 
 License:        MIT

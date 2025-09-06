@@ -67,7 +67,7 @@ jobs:
       if: matrix.image
       run: chown root.root .
 
-    - name: Check version and update spec
+    - name: Check version
       env:
         VERSION: ${{ needs.get_version.outputs.version }}
       run: |
@@ -77,9 +77,12 @@ jobs:
       run: |
         bash scripts/install_deps_el9.sh
 
-    - name: Build bdist_rpm pkgs
+    - name: Build rpm pkgs
       run: |
         NAME="${{ matrix.spec }}" make packages
+      env:
+        SETUPTOOLS_SCM_PRETEND_VERSION: ${{ needs.get_version.outputs.version }}
+        VERSION: ${{ needs.get_version.outputs.version }}
 
     - name: Upload rpm files
       uses: actions/upload-artifact@v4

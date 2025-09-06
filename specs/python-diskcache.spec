@@ -6,7 +6,7 @@
 
 Name:           python-%{pypi_name}
 Version:        5.6.3
-Release:        2%{?dist}
+Release:        1%{?dist}
 Summary:        Disk and file backed persistent cache
 
 License:        ASL 2.0
@@ -25,8 +25,9 @@ be nice to leverage.
 %package -n     python3-%{pypi_name}
 Summary:        %{summary}
 
-BuildRequires:  python3-devel
-BuildRequires:  python3-setuptools
+BuildRequires:  python%{python3_pkgversion}-devel
+BuildRequires:  python%{python3_pkgversion}-setuptools
+BuildRequires:  python%{python3_pkgversion}-wheel
 %{?python_provide:%python_provide python3-%{pypi_name}}
 
 %description -n python3-%{pypi_name}
@@ -59,6 +60,9 @@ rm -rf %{pypi_name}.egg-info
 %{python3_sitelib}/%{pypi_name}-%{version}-py*.egg-info/
 
 %changelog
+* Fri Sep 05 2025 Stephen Arnold <nerdboy@gentoo.org> - 5.6.3-1
+- rebuild for testing
+
 * Thu Jul 24 2025 Stephen Arnold <nerdboy@gentoo.org> - 5.6.3
 - big version bump
 

@@ -6,7 +6,7 @@
 
 Name:           python-%{pypi_name}
 Version:        0.8.6.2
-Release:        2%{?dist}
+Release:        1%{?dist}
 Summary:        A pure python TFTP library
 
 License:        MIT

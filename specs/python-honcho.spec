@@ -6,7 +6,7 @@
 
 Name:           python-%{pypi_name}
 Version:        2.0.0.2
-Release:        2%{?dist}
+Release:        1%{?dist}
 Summary:        A Python clone of Foreman, a tool for managing Procfile-based applications.
 
 License:        MIT

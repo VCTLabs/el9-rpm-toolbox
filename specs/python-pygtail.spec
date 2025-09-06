@@ -6,7 +6,7 @@
 
 Name:           python-%{pypi_name}
 Version:        0.14.0.3
-Release:        2%{?dist}
+Release:        1%{?dist}
 Summary:        Pygtail reads log file lines that have not been read.
 
 License:        MIT

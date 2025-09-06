@@ -6,7 +6,7 @@
 
 Name:           python-%{pypi_name}
 Version:        1.2.3.2
-Release:        2%{?dist}
+Release:        1%{?dist}
 Summary:        Lightweight, pure-Python Text User Interface (TUI) widget toolkit.
 
 License:        LGPL-2.1-or-later

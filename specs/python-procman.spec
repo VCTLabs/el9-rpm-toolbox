@@ -6,7 +6,7 @@
 
 Name:           python-%{pypi_name}
 Version:        0.6.2
-Release:        2%{?dist}
+Release:        1%{?dist}
 Summary:        Console tool for running multiple external processes and multiplexing their output
 
 License:        LGPL-2.1-or-later

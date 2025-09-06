@@ -6,7 +6,7 @@
 
 Name:           python-%{pypi_name}
 Version:        3.5.3
-Release:        2%{?dist}
+Release:        1%{?dist}
 Summary:        view/edit your binary with any text editor.
 
 License:        LGPL-2.1-or-later

@@ -5,7 +5,7 @@
 %global pypi_name pyserv
 
 Name:           python-%{pypi_name}
-Version:        1.8.7
+Version:        1.8.8
 Release:        1%{?dist}
 Summary:        Threaded wsgi, http, tftp server classes, entry points and daemon scripts.
 

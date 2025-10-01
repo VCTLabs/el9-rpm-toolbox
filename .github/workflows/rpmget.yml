@@ -1,4 +1,4 @@
-name: hexdump RPMs
+name: rpmget RPMs
 
 on:
   workflow_dispatch:
@@ -31,10 +31,10 @@ jobs:
           echo "version=${version}" >> $GITHUB_OUTPUT
           echo Version from spec: $version
         env:
-          NAME: python-hexdump
+          NAME: python-rpmget
 
   build_rpms:
-    name: hexdump-rpms
+    name: rpmget-rpms
     timeout-minutes: 30
     strategy:
       fail-fast: false
@@ -42,7 +42,7 @@ jobs:
         name: [rocky9]
         include:
           - name: rocky9
-            spec: python-hexdump
+            spec: python-rpmget
             image: quay.io/rockylinux/rockylinux:9
 
     runs-on: ubuntu-latest
@@ -82,6 +82,7 @@ jobs:
         NAME="${{ matrix.spec }}" make packages
       env:
         SETUPTOOLS_SCM_PRETEND_VERSION: ${{ needs.get_version.outputs.version }}
+        VERSION: ${{ needs.get_version.outputs.version }}
 
     - name: Upload rpm files
       uses: actions/upload-artifact@v4
@@ -92,7 +93,7 @@ jobs:
           tmp/SRPMS/*.rpm
 
   create-release:
-    name: Create hexdump Release
+    name: Create rpmget Release
     runs-on: ubuntu-latest
     needs: [get_version, build_rpms]
     permissions:
@@ -118,12 +119,12 @@ jobs:
       if: ${{ github.event_name != 'pull_request' }}
       run: |
         set +e
-        if git rev-list "hexdump-${{ needs.get_version.outputs.version }}" >/dev/null 2>&1 ; then
-          echo "Tag for hexdump-${{ needs.get_version.outputs.version }} already exists. Skipping release creation."
+        if git rev-list "rpmget-${{ needs.get_version.outputs.version }}" >/dev/null 2>&1 ; then
+          echo "Tag for rpmget-${{ needs.get_version.outputs.version }} already exists. Skipping release creation."
           echo "NEW_RELEASE=false" >> $GITHUB_OUTPUT
         else
-          git tag "hexdump-${{ needs.get_version.outputs.version }}"
-          git push origin "hexdump-${{ needs.get_version.outputs.version }}"
+          git tag "rpmget-${{ needs.get_version.outputs.version }}"
+          git push origin "rpmget-${{ needs.get_version.outputs.version }}"
           echo "NEW_RELEASE=true" >> $GITHUB_OUTPUT
         fi
 
@@ -134,9 +135,9 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: hexdump-${{ needs.get_version.outputs.version }}
-        name: RPM Release hexdump-${{ needs.get_version.outputs.version }}
-        body: Latest RPMs for hexdump-${{ needs.get_version.outputs.version }}
+        tag_name: rpmget-${{ needs.get_version.outputs.version }}
+        name: RPM Release rpmget-${{ needs.get_version.outputs.version }}
+        body: Latest RPMs for rpmget-${{ needs.get_version.outputs.version }}
         draft: false
         prerelease: false
         files: |

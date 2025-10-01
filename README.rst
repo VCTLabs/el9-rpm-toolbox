@@ -49,6 +49,7 @@ or RPM repo host).
     pygtail        |pygtail|
     pyprctl        |pyprctl|
     pyserv         |pyserv|
+    rpmget         |rpmget|
     stoppy         |stoppy|
     timed-count    |timed-count|
     tftpy          |tftpy|
@@ -94,6 +95,10 @@ or RPM repo host).
 .. |pyserv| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/pyserv.yml/badge.svg
     :target: https://sarnold.github.io/pyserv/
     :alt: pyserv RPM status
+
+.. |rpmget| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/rpmget.yml/badge.svg
+    :target: https://sarnold.github.io/rpmget/
+    :alt: rpmget RPM status
 
 .. |stoppy| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/stoppy.yml/badge.svg
     :target: https://github.com/morefigs/stoppy

@@ -56,6 +56,10 @@ or RPM repo host).
    =============  ===============
 
 
+.. |atomics| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/atomics.yml/badge.svg
+    :target: https://github.com/doodspav/atomics
+    :alt: atomics RPM status
+
 .. |daemonizer| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/daemonizer.yml/badge.svg
     :target: https://sarnold.github.io/python-daemonizer/
     :alt: daemonizer RPM status

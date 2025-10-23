@@ -39,6 +39,7 @@ or RPM repo host).
    =============  ===============
     Package        Status
    =============  ===============
+    atomics        |atomics|
     daemonizer     |daemonizer|
     diskcache      |diskcache|
     hexdump        |hexdump|

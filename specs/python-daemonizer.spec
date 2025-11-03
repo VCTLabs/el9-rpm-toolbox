@@ -5,7 +5,7 @@
 %global srcname daemonizer
 
 Name:           python-%{srcname}
-Version:        1.1.6
+Version:        1.1.7
 Release:        1%{?dist}
 Summary:        Python daemonizer for Unix, Linux and OS X
 

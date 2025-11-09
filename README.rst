@@ -78,6 +78,10 @@ or RPM repo host).
     :target: https://honcho.readthedocs.io/
     :alt: honcho RPM status
 
+.. |logwatcher| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/logwatcher.yml/badge.svg
+    :target: https://github.com/sarnold/pylogtailer
+    :alt: logwatcher RPM status
+
 .. |picotui| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/picotui.yml/badge.svg
     :target: https://sarnold.github.io/picotui/
     :alt: picotui RPM status

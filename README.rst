@@ -44,6 +44,7 @@ or RPM repo host).
     diskcache      |diskcache|
     hexdump        |hexdump|
     honcho         |honcho|
+    logwatcher     |logwatcher|
     picotui        |picotui|
     procman        |procman|
     py3tftp        |py3tftp|

@@ -1,0 +1,145 @@
+name: logwatcher RPMs
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  get_version:
+    name: Get version info
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    defaults:
+      run:
+        shell: bash
+    outputs:
+      version: ${{ steps.spec_ver.outputs.version }}
+
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Get package version
+        id: spec_ver
+        run: |
+          version=$(make version)
+          echo "version=${version}" >> $GITHUB_OUTPUT
+          echo Version from spec: $version
+        env:
+          NAME: python-logwatcher
+
+  build_rpms:
+    name: logwatcher-rpms
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        name: [rocky9]
+        include:
+          - name: rocky9
+            spec: python-logwatcher
+            image: quay.io/rockylinux/rockylinux:9
+
+    runs-on: ubuntu-latest
+    needs: [get_version]
+    container:
+      image: ${{ matrix.image }}
+    permissions:
+      contents: read
+    defaults:
+      run:
+        shell: bash
+    env:
+      PYTHONIOENCODING: utf-8
+
+    steps:
+    - uses: actions/checkout@v5
+      with:
+        fetch-depth: 0
+
+    # Work-around for https://github.com/actions/runner-images/issues/6775
+    - name: Change Owner of Container Working Directory
+      if: matrix.image
+      run: chown root.root .
+
+    - name: Check version
+      env:
+        VERSION: ${{ needs.get_version.outputs.version }}
+      run: |
+        echo Dev version from get_version step: $VERSION
+
+    - name: Install deps for rpm builds (centos/rocky)
+      run: |
+        bash scripts/install_deps_el9.sh
+
+    - name: Build rpm pkgs
+      run: |
+        NAME="${{ matrix.spec }}" make packages
+      env:
+        SETUPTOOLS_SCM_PRETEND_VERSION: ${{ needs.get_version.outputs.version }}
+        VERSION: ${{ needs.get_version.outputs.version }}
+
+    - name: Upload rpm files
+      uses: actions/upload-artifact@v5
+      with:
+        name: packages
+        path: |
+          tmp/RPMS/*/*.rpm
+          tmp/SRPMS/*.rpm
+
+  create-release:
+    name: Create logwatcher Release
+    runs-on: ubuntu-latest
+    needs: [get_version, build_rpms]
+    permissions:
+      contents: write
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v5
+
+    - name: Download Artifacts
+      uses: actions/download-artifact@v6
+      with:
+        name: packages
+        path: packages
+
+    - name: List Artifacts
+      run: find . -maxdepth 3 -name \*.rpm
+
+    - name: Fetch tags
+      run: git fetch --tags --prune --quiet
+
+    - name: Tag Release
+      id: tag_release
+      if: ${{ github.event_name != 'pull_request' }}
+      run: |
+        set +e
+        if git rev-list "logwatcher-${{ needs.get_version.outputs.version }}" >/dev/null 2>&1 ; then
+          echo "Tag for logwatcher-${{ needs.get_version.outputs.version }} already exists. Skipping release creation."
+          echo "NEW_RELEASE=false" >> $GITHUB_OUTPUT
+        else
+          git tag "logwatcher-${{ needs.get_version.outputs.version }}"
+          git push origin "logwatcher-${{ needs.get_version.outputs.version }}"
+          echo "NEW_RELEASE=true" >> $GITHUB_OUTPUT
+        fi
+
+    - name: Create draft release
+      id: create_release
+      if: ${{ github.event_name != 'pull_request' && steps.tag_release.outputs.NEW_RELEASE == 'true' }}
+      uses: softprops/action-gh-release@v2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: logwatcher-${{ needs.get_version.outputs.version }}
+        name: RPM Release logwatcher-${{ needs.get_version.outputs.version }}
+        body: Latest RPMs for logwatcher-${{ needs.get_version.outputs.version }}
+        draft: false
+        prerelease: false
+        files: |
+          packages/RPMS/*/*.rpm
+          packages/SRPMS/*.rpm

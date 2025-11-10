@@ -5,7 +5,7 @@
 %global srcname logwatcher
 
 Name:           python-%{srcname}
-Version:        0.5.2
+Version:        0.5.3
 Release:        1%{?dist}
 Summary:        Real-time log file watcher supporting log rotation.
 

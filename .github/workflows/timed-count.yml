@@ -20,7 +20,7 @@ jobs:
       version: ${{ steps.spec_ver.outputs.version }}
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
@@ -58,7 +58,7 @@ jobs:
       PYTHONIOENCODING: utf-8
 
     steps:
-    - uses: actions/checkout@v5
+    - uses: actions/checkout@v6
       with:
         fetch-depth: 0
 
@@ -98,7 +98,7 @@ jobs:
       contents: write
     steps:
     - name: Checkout
-      uses: actions/checkout@v5
+      uses: actions/checkout@v6
 
     - name: Download Artifacts
       uses: actions/download-artifact@v6

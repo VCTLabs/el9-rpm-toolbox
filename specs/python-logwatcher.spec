@@ -5,7 +5,7 @@
 %global srcname logwatcher
 
 Name:           python-%{srcname}
-Version:        0.5.3
+Version:        0.5.4
 Release:        1%{?dist}
 Summary:        Real-time log file watcher supporting log rotation.
 
@@ -72,5 +72,7 @@ be able to "follow" and support also rotating log files.
 %license LICENSES REUSE.toml
 
 %changelog
+* Sat Nov 22 2025 Stephen Arnold <nerdboy@gentoo.org> - v0.5.4
+- Update to latest upstream release
 * Sat Nov 08 2025 Stephen Arnold <nerdboy@gentoo.org> - v0.5.1
 - Initial package

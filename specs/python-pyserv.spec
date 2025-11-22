@@ -5,7 +5,7 @@
 %global pypi_name pyserv
 
 Name:           python-%{pypi_name}
-Version:        1.8.10
+Version:        1.8.11
 Release:        1%{?dist}
 Summary:        Threaded wsgi, http, tftp server classes, entry points and daemon scripts.
 
@@ -32,6 +32,7 @@ BuildRequires:  python%{python3_pkgversion}dist(setuptools-scm[toml])
 # these are not really "extra"
 BuildRequires:  python%{python3_pkgversion}dist(py3tftp)
 BuildRequires:  python%{python3_pkgversion}dist(daemonizer)
+BuildRequires:  python%{python3_pkgversion}dist(logwatcher)
 BuildRequires:  python%{python3_pkgversion}dist(tftpy)
 BuildRequires:  python%{python3_pkgversion}dist(picotui)
 BuildRequires:  python%{python3_pkgversion}dist(pygtail)
@@ -78,6 +79,8 @@ async daemon script based on the py3tftp package.
 %{_bindir}/*
 
 %changelog
+* Sat Nov 22 2025 Stephen Arnold <nerdboy@gentoo.org> - 1.8.11
+- Transitional deps release
 * Tue Aug 19 2025 Stephen Arnold <nerdboy@gentoo.org> - 1.8.7
 - New upstream release
 * Fri Aug 15 2025 Stephen Arnold <nerdboy@gentoo.org> - 1.8.6

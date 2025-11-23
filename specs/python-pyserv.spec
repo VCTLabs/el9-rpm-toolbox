@@ -35,7 +35,6 @@ BuildRequires:  python%{python3_pkgversion}dist(daemonizer)
 BuildRequires:  python%{python3_pkgversion}dist(logwatcher)
 BuildRequires:  python%{python3_pkgversion}dist(tftpy)
 BuildRequires:  python%{python3_pkgversion}dist(picotui)
-BuildRequires:  python%{python3_pkgversion}dist(pygtail)
 BuildRequires:  python%{python3_pkgversion}dist(platformdirs)
 BuildRequires:  python%{python3_pkgversion}-scapy
 %if %{with tests}

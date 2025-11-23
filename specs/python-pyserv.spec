@@ -5,7 +5,7 @@
 %global pypi_name pyserv
 
 Name:           python-%{pypi_name}
-Version:        1.8.11
+Version:        1.9.0
 Release:        1%{?dist}
 Summary:        Threaded wsgi, http, tftp server classes, entry points and daemon scripts.
 
@@ -78,6 +78,8 @@ async daemon script based on the py3tftp package.
 %{_bindir}/*
 
 %changelog
+* Sat Nov 22 2025 Stephen Arnold <nerdboy@gentoo.org> - 1.9.0
+- Migrate to logwatcher
 * Sat Nov 22 2025 Stephen Arnold <nerdboy@gentoo.org> - 1.8.11
 - Transitional deps release
 * Tue Aug 19 2025 Stephen Arnold <nerdboy@gentoo.org> - 1.8.7

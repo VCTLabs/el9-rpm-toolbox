@@ -48,6 +48,7 @@ or RPM repo host).
     picotui        |picotui|
     procman        |procman|
     py3tftp        |py3tftp|
+    pyeztrace      |pyeztrace|
     pygtail        |pygtail|
     pyprctl        |pyprctl|
     pyserv         |pyserv|
@@ -69,6 +70,10 @@ or RPM repo host).
 .. |diskcache| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/diskcache.yml/badge.svg
     :target: http://www.grantjenks.com/docs/diskcache/
     :alt: diskcache RPM status
+
+.. |pyeztrace| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/eztrace.yml/badge.svg
+    :target: https://github.com/jeffersonaaron25/PyEzTrace
+    :alt: pyeztrace RPM status
 
 .. |hexdump| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/hexdump.yml/badge.svg
     :target: https://sarnold.github.io/hexdump/

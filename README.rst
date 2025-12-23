@@ -36,28 +36,28 @@ or RPM repo host).
 .. table:: RPM build status
    :widths: auto
 
-   =============  ===============
-    Package        Status
-   =============  ===============
-    atomics        |atomics|
-    daemonizer     |daemonizer|
-    diskcache      |diskcache|
-    hexdump        |hexdump|
-    honcho         |honcho|
-    line_profiler  |line_profiler|
-    logwatcher     |logwatcher|
-    picotui        |picotui|
-    procman        |procman|
-    py3tftp        |py3tftp|
-    pyeztrace      |pyeztrace|
-    pygtail        |pygtail|
-    pyprctl        |pyprctl|
-    pyserv         |pyserv|
-    rpmget         |rpmget|
-    stoppy         |stoppy|
-    timed-count    |timed-count|
-    tftpy          |tftpy|
-   =============  ===============
+   ==============  ==================
+    Package         Status
+   ==============  ==================
+    atomics         |atomics|
+    daemonizer      |daemonizer|
+    diskcache       |diskcache|
+    hexdump         |hexdump|
+    honcho          |honcho|
+    line_profiler   |line_profiler|
+    logwatcher      |logwatcher|
+    picotui         |picotui|
+    procman         |procman|
+    py3tftp         |py3tftp|
+    pyeztrace       |pyeztrace|
+    pygtail         |pygtail|
+    pyprctl         |pyprctl|
+    pyserv          |pyserv|
+    rpmget          |rpmget|
+    stoppy          |stoppy|
+    timed-count     |timed-count|
+    tftpy           |tftpy|
+   ==============  ==================
 
 
 .. |atomics| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/atomics.yml/badge.svg

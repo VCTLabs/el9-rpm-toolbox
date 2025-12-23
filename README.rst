@@ -44,6 +44,7 @@ or RPM repo host).
     diskcache      |diskcache|
     hexdump        |hexdump|
     honcho         |honcho|
+    line_profiler  |line_profiler|
     logwatcher     |logwatcher|
     picotui        |picotui|
     procman        |procman|

@@ -21,6 +21,7 @@ is available.
 %package -n python3-%{pypi_name}
 Summary:        Line-by-line profiling for Python.
 BuildRequires:  python3-devel
+BuildRequires:  python3-libs
 BuildRequires:  python3-setuptools
 BuildRequires:  python3-wheel
 BuildRequires:  python3-tomli

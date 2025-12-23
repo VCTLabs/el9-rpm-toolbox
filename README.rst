@@ -83,6 +83,10 @@ or RPM repo host).
     :target: https://honcho.readthedocs.io/
     :alt: honcho RPM status
 
+.. |line_profiler| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/line_profiler.yml/badge.svg
+    :target: https://github.com/pyutils/line_profiler
+    :alt: line_profiler RPM status
+
 .. |logwatcher| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/logwatcher.yml/badge.svg
     :target: https://github.com/sarnold/pylogtailer
     :alt: logwatcher RPM status

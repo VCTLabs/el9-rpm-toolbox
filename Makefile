@@ -19,6 +19,8 @@ tmp:
 # RPM packaging
 tarball: tmp
 	dnf -y builddep --spec specs/$(NAME).spec
+	mkdir -p $(TMP)/SOURCES
+	cp specs/*.patch $(TMP)/SOURCES/
 	spectool --define '_topdir $(TMP)' -g -R specs/$(NAME).spec
 version:
 	@echo "$(VERSION)"

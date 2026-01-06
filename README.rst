@@ -54,6 +54,7 @@ or RPM repo host).
     pyprctl         |pyprctl|
     pyserv          |pyserv|
     rpmget          |rpmget|
+    scapy           |scapy|
     stoppy          |stoppy|
     timed-count     |timed-count|
     tftpy           |tftpy|
@@ -119,6 +120,10 @@ or RPM repo host).
 .. |rpmget| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/rpmget.yml/badge.svg
     :target: https://sarnold.github.io/rpmget/
     :alt: rpmget RPM status
+
+.. |scapy| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/scapy.yml/badge.svg
+    :target: https://github.com/secdev/scapy
+    :alt: scapy RPM status
 
 .. |stoppy| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/stoppy.yml/badge.svg
     :target: https://github.com/morefigs/stoppy

@@ -31,7 +31,7 @@ jobs:
           echo "version=${version}" >> $GITHUB_OUTPUT
           echo Version from spec: $version
         env:
-          NAME: python-bitmaskfunctionalities
+          NAME: python-bitmask
 
   build_rpms:
     name: bitmask-rpms

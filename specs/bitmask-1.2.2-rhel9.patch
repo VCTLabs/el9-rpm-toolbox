@@ -1,0 +1,83 @@
+From ff04fbf4089721d94a9a68e358e3ac9c987f0e30 Mon Sep 17 00:00:00 2001
+From: Stephen L Arnold <sarnold@vctlabs.com>
+Date: Wed, 4 Mar 2026 10:42:41 -0800
+Subject: [PATCH] fix: dev: backport get_count method, use typing_extensions
+
+* set min python to 3.9 and remove license-files from pyproject.toml
+* use previous version of get_count and import from typing_extensions
+  instead of typing
+* makes both of the above compatible with pre-3.11 python
+  to make el9 rpm install happy with python 3.9
+
+Signed-off-by: Stephen L Arnold <sarnold@vctlabs.com>
+---
+ pyproject.toml                |  9 ++++++---
+ src/BitMask/bitmask_module.py | 12 +++++++++---
+ 2 files changed, 15 insertions(+), 6 deletions(-)
+
+diff --git a/pyproject.toml b/pyproject.toml
+index e9df695..8a39261 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -8,8 +8,8 @@ packages = ["src/BitMask"]
+ [project]
+ name = "BitMaskFunctionalities"
+ version = "1.2.2"
+-dependencies = []
+-requires-python = ">= 3.11"
++dependencies = ["typing_extensions"]
++requires-python = ">= 3.9"
+ authors = [
+     { name = "Adam Thieringer", email = "adamt0408@gmail.com" }
+ ]
+@@ -20,9 +20,12 @@ classifiers = [
+     "Development Status :: 5 - Production/Stable"
+ ]
+ license = "MIT"
+-license-files = ["LICENSE.txt"]
+ 
+ [project.urls]
+ Repository = "https://github.com/AThieringer/BitMask"
+ Download = "https://github.com/AThieringer/BitMask/releases"
+ Changelog = "https://github.com/AThieringer/BitMask/blob/master/Changelog"
++
++[tool.bandit]
++exclude_dirs = ["tests",]
++#skips = ["B101"]
+diff --git a/src/BitMask/bitmask_module.py b/src/BitMask/bitmask_module.py
+index 0d36eb2..dcdf597 100644
+--- a/src/BitMask/bitmask_module.py
++++ b/src/BitMask/bitmask_module.py
+@@ -12,12 +12,12 @@ from __future__ import annotations
+ 
+ import warnings
+ from collections.abc import Generator
+-from typing import Self, TypeAlias
++from typing_extensions import List, Self, Tuple, TypeAlias, Union
+ 
+ __all__ = ["BitMask"]
+ _MAX_BITMASK_LENGTH = 1024
+ 
+-IndexFormats: TypeAlias = tuple[int, ...] | list[int]
++IndexFormats: TypeAlias = Union[Tuple[int], List[int]]
+ 
+ 
+ def _value_validation(value: int, upper_bound: int) -> None:
+@@ -514,7 +514,13 @@ class BitMask:
+ 
+         :return: The number of set bits.
+         """
+-        return self._value.bit_count()
++        temp_value = self._value
++        count = 0
++        while temp_value:
++            temp_value &= temp_value - 1
++            count += 1
++
++        return count
+ 
+     def get_set_bits(self) -> tuple[int, ...]:
+         """
+-- 
+2.52.0
+

@@ -40,6 +40,7 @@ or RPM repo host).
     Package         Status
    ==============  ==================
     atomics         |atomics|
+    bitmask         |bitmask|
     daemonizer      |daemonizer|
     diskcache       |diskcache|
     hexdump         |hexdump|
@@ -64,6 +65,10 @@ or RPM repo host).
 .. |atomics| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/atomics.yml/badge.svg
     :target: https://github.com/doodspav/atomics
     :alt: atomics RPM status
+
+.. |bitmask| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/bitmask.yml/badge.svg
+    :target: https://github.com/AThieringer/BitMask
+    :alt: bitmask RPM status
 
 .. |daemonizer| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/daemonizer.yml/badge.svg
     :target: https://sarnold.github.io/python-daemonizer/

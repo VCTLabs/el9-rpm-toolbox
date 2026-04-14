@@ -12,7 +12,7 @@ The artifacts are also available in the artifacts of each GitHub Action.
 
 However, there are some limitations to using the artifacts directly:
 
-* Downloading of build artifacts in GitHub Ations currently requires a
+* Downloading of build artifacts in GitHub Actions currently requires a
   GitHub account
 * Blobs in build artifacts are zipped by the GitHub frontend by default,
   even zip files themselves! Build artifact zips may contain other zip

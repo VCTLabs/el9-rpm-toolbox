@@ -56,6 +56,7 @@ or RPM repo host).
     pyserv          |pyserv|
     rpmget          |rpmget|
     scapy           |scapy|
+    statemachine    |statemachine|
     stoppy          |stoppy|
     timed-count     |timed-count|
     tftpy           |tftpy|
@@ -129,6 +130,10 @@ or RPM repo host).
 .. |scapy| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/scapy.yml/badge.svg
     :target: https://github.com/secdev/scapy
     :alt: scapy RPM status
+
+.. |statemachine| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/statemachine.yml/badge.svg
+    :target: https://github.com/fgmacedo/python-statemachine
+    :alt: statemachine RPM status
 
 .. |stoppy| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/stoppy.yml/badge.svg
     :target: https://github.com/morefigs/stoppy

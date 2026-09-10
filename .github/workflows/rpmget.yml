@@ -65,7 +65,7 @@ jobs:
     # Work-around for https://github.com/actions/runner-images/issues/6775
     - name: Change Owner of Container Working Directory
       if: matrix.image
-      run: chown root.root .
+      run: chown root:root .
 
     - name: Check version
       env:
@@ -109,7 +109,7 @@ jobs:
         path: packages
 
     - name: List Artifacts
-      run: find . -maxdepth 3 -name \*.rpm
+      run: ls -R
 
     - name: Fetch tags
       run: git fetch --tags --prune --quiet
@@ -137,7 +137,7 @@ jobs:
       with:
         tag_name: rpmget-${{ needs.get_version.outputs.version }}
         name: RPM Release rpmget-${{ needs.get_version.outputs.version }}
-        body: Latest RPMs for rpmget-${{ needs.get_version.outputs.version }}
+        body: Latest pkgs for rpmget-${{ needs.get_version.outputs.version }}
         draft: false
         prerelease: false
         files: |

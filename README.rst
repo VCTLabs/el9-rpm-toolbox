@@ -62,6 +62,7 @@ or RPM repo host).
     stoppy          |stoppy|
     timed-count     |timed-count|
     tftpy           |tftpy|
+    xmlschema       |xmlschema|
    ==============  ==================
 
 
@@ -156,3 +157,7 @@ or RPM repo host).
 .. |tftpy| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/tftpy.yml/badge.svg
     :target: https://msoulier.github.io/tftpy/pages/html/
     :alt: tftpy RPM status
+
+.. |xmlschema| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/xmlschema.yml/badge.svg
+    :target: https://github.com/sissaschool/xmlschema
+    :alt: xmlschema RPM status

@@ -43,11 +43,12 @@ or RPM repo host).
     bitmask         |bitmask|
     daemonizer      |daemonizer|
     diskcache       |diskcache|
+    elementpath     |elementpath|
     hexdump         |hexdump|
     honcho          |honcho|
     line_profiler   |line_profiler|
     logwatcher      |logwatcher|
-    packageurl-python |packageurl-python|
+    packageurl      |packageurl-python|
     picotui         |picotui|
     procman         |procman|
     py3tftp         |py3tftp|
@@ -104,7 +105,7 @@ or RPM repo host).
     :target: https://github.com/sarnold/pylogtailer
     :alt: logwatcher RPM status
 
-.. |packageurl-python| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actio>
+.. |packageurl-python| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/packageurl-python.yml/badge.svg
     :target: https://github.com/package-url/packageurl-python
     :alt: packageurl-python RPM status
 
@@ -128,7 +129,7 @@ or RPM repo host).
     :target: https://pyprctl.readthedocs.io/en/latest
     :alt: pyprctl RPM status
 
-.. |pyserv| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflow>
+.. |pyserv| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/pyserv.yml/badge.svg
     :target: https://sarnold.github.io/pyserv/
     :alt: pyserv RPM status
 

@@ -7,7 +7,7 @@
 Name:           python-%{pypi_name}
 Version:        0.3.2
 Release:        1%{?dist}
-Summary:         A workflow helper to manage random sets of RPM package deps.
+Summary:         A workflow helper to manage sets of RPM packages and (optionally) create a pkg repo.
 
 License:        MIT
 URL:            http://github.com/sarnold/rpmget
@@ -32,9 +32,9 @@ BuildRequires:  python%{python3_pkgversion}dist(setuptools-scm[toml])
 # these are not really "extra"
 BuildRequires:  python%{python3_pkgversion}dist(httpx)
 BuildRequires:  python%{python3_pkgversion}dist(cerberus)
-BuildRequires:  python%{python3_pkgversion}dist(munch)
 BuildRequires:  python%{python3_pkgversion}dist(platformdirs)
 BuildRequires:  python%{python3_pkgversion}dist(tqdm)
+BuildRequires:  python%{python3_pkgversion}dist(munch)
 %if %{with tests}
 BuildRequires:  python%{python3_pkgversion}dist(pytest)
 %endif
@@ -67,7 +67,7 @@ package repo.
 %check
 %pyproject_check_import -e '*.export'
 %if %{with tests}
-%pytest -vv test/
+%pytest -vv tests/
 %endif
 
 %files -n python%{python3_pkgversion}-rpmget -f %{pyproject_files}

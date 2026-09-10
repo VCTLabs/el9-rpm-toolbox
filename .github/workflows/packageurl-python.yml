@@ -1,4 +1,4 @@
-name: rpmget RPMs
+name: packageurl-python RPMs
 
 on:
   workflow_dispatch:
@@ -31,10 +31,10 @@ jobs:
           echo "version=${version}" >> $GITHUB_OUTPUT
           echo Version from spec: $version
         env:
-          NAME: python-rpmget
+          NAME: python-packageurl-python
 
   build_rpms:
-    name: rpmget-rpms
+    name: packageurl-python-rpms
     timeout-minutes: 30
     strategy:
       fail-fast: false
@@ -42,7 +42,7 @@ jobs:
         name: [rocky9]
         include:
           - name: rocky9
-            spec: python-rpmget
+            spec: python-packageurl-python
             image: quay.io/rockylinux/rockylinux:9
 
     runs-on: ubuntu-latest
@@ -93,7 +93,7 @@ jobs:
           tmp/SRPMS/*.rpm
 
   create-release:
-    name: Create rpmget Release
+    name: Create packageurl-python Release
     runs-on: ubuntu-latest
     needs: [get_version, build_rpms]
     permissions:
@@ -119,12 +119,12 @@ jobs:
       if: ${{ github.event_name != 'pull_request' }}
       run: |
         set +e
-        if git rev-list "rpmget-${{ needs.get_version.outputs.version }}" >/dev/null 2>&1 ; then
-          echo "Tag for rpmget-${{ needs.get_version.outputs.version }} already exists. Skipping release creation."
+        if git rev-list "packageurl-python-${{ needs.get_version.outputs.version }}" >/dev/null 2>&1 ; then
+          echo "Tag for packageurl-python-${{ needs.get_version.outputs.version }} already exists. Skipping release creation."
           echo "NEW_RELEASE=false" >> $GITHUB_OUTPUT
         else
-          git tag "rpmget-${{ needs.get_version.outputs.version }}"
-          git push origin "rpmget-${{ needs.get_version.outputs.version }}"
+          git tag "packageurl-python-${{ needs.get_version.outputs.version }}"
+          git push origin "packageurl-python-${{ needs.get_version.outputs.version }}"
           echo "NEW_RELEASE=true" >> $GITHUB_OUTPUT
         fi
 
@@ -135,9 +135,9 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: rpmget-${{ needs.get_version.outputs.version }}
-        name: RPM Release rpmget-${{ needs.get_version.outputs.version }}
-        body: Latest pkgs for rpmget-${{ needs.get_version.outputs.version }}
+        tag_name: packageurl-python-${{ needs.get_version.outputs.version }}
+        name: RPM Release packageurl-python-${{ needs.get_version.outputs.version }}
+        body: Latest pkgs for packageurl-python-${{ needs.get_version.outputs.version }}
         draft: false
         prerelease: false
         files: |

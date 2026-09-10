@@ -69,7 +69,7 @@ async daemon script based on the py3tftp package.
 %check
 %pyproject_check_import -e '*.export'
 %if %{with tests}
-%pytest -vv test/
+%pytest -vv tests/
 %endif
 
 %files -n python%{python3_pkgversion}-pyserv -f %{pyproject_files}
@@ -78,6 +78,8 @@ async daemon script based on the py3tftp package.
 %{_bindir}/*
 
 %changelog
+* Tue Jan 06 2026 Stephen Arnold <nerdboy@gentoo.org> - 1.9.1
+- un-pin scapy deps
 * Sat Nov 22 2025 Stephen Arnold <nerdboy@gentoo.org> - 1.9.0
 - Migrate to logwatcher
 * Sat Nov 22 2025 Stephen Arnold <nerdboy@gentoo.org> - 1.8.11

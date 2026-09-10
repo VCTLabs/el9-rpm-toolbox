@@ -47,6 +47,7 @@ or RPM repo host).
     honcho          |honcho|
     line_profiler   |line_profiler|
     logwatcher      |logwatcher|
+    packageurl-python |packageurl-python|
     picotui         |picotui|
     procman         |procman|
     py3tftp         |py3tftp|
@@ -79,6 +80,10 @@ or RPM repo host).
     :target: http://www.grantjenks.com/docs/diskcache/
     :alt: diskcache RPM status
 
+.. |elementpath| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/elementpath.yml/badge.svg
+    :target: https://github.com/sissaschool/elementpath
+    :alt: elementpath RPM status
+
 .. |pyeztrace| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/eztrace.yml/badge.svg
     :target: https://github.com/jeffersonaaron25/PyEzTrace
     :alt: pyeztrace RPM status
@@ -98,6 +103,10 @@ or RPM repo host).
 .. |logwatcher| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/logwatcher.yml/badge.svg
     :target: https://github.com/sarnold/pylogtailer
     :alt: logwatcher RPM status
+
+.. |packageurl-python| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actio>
+    :target: https://github.com/package-url/packageurl-python
+    :alt: packageurl-python RPM status
 
 .. |picotui| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/picotui.yml/badge.svg
     :target: https://sarnold.github.io/picotui/
@@ -119,7 +128,7 @@ or RPM repo host).
     :target: https://pyprctl.readthedocs.io/en/latest
     :alt: pyprctl RPM status
 
-.. |pyserv| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/pyserv.yml/badge.svg
+.. |pyserv| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflow>
     :target: https://sarnold.github.io/pyserv/
     :alt: pyserv RPM status
 

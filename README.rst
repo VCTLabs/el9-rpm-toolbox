@@ -80,6 +80,10 @@ or RPM repo host).
     :target: http://www.grantjenks.com/docs/diskcache/
     :alt: diskcache RPM status
 
+.. |elementpath| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/elementpath.yml/badge.svg
+    :target: https://github.com/sissaschool/elementpath
+    :alt: elementpath RPM status
+
 .. |pyeztrace| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/eztrace.yml/badge.svg
     :target: https://github.com/jeffersonaaron25/PyEzTrace
     :alt: pyeztrace RPM status

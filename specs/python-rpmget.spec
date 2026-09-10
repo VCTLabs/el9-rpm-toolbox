@@ -10,7 +10,7 @@ Release:        1%{?dist}
 Summary:         A workflow helper to manage sets of RPM packages and (optionally) create a pkg repo.
 
 License:        MIT
-URL:            http://github.com/sarnold/rpmget
+URL:            https://github.com/sarnold/rpmget
 Source0:        %{url}/releases/download/%{version}/%{pypi_name}-%{version}.tar.gz
 BuildArch:      noarch
 

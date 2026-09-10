@@ -9,6 +9,7 @@ Summary:        XPath 1.0/2.0 parsers and selectors for ElementTree and lxml
 License:        MIT
 URL:            https://github.com/sissaschool/elementpath
 Source0:        %{pypi_source}
+BuildArch:      noarch
 
 %?python_enable_dependency_generator
 

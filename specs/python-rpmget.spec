@@ -7,7 +7,7 @@
 Name:           python-%{pypi_name}
 Version:        0.3.2
 Release:        1%{?dist}
-Summary:         A workflow helper to manage sets of RPM packages and (optionally) create a pkg repo.
+Summary:        A workflow helper to manage sets of RPM packages and (optionally) create a pkg repo.
 
 License:        MIT
 URL:            https://github.com/sarnold/rpmget

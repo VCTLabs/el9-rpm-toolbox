@@ -34,8 +34,8 @@ BuildRequires:  python%{python3_pkgversion}dist(httpx)
 BuildRequires:  python%{python3_pkgversion}dist(cerberus)
 BuildRequires:  python%{python3_pkgversion}dist(platformdirs)
 BuildRequires:  python%{python3_pkgversion}dist(tqdm)
-%if %{with tests}
 BuildRequires:  python%{python3_pkgversion}dist(munch)
+%if %{with tests}
 BuildRequires:  python%{python3_pkgversion}dist(pytest)
 %endif
 

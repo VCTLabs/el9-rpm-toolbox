@@ -46,6 +46,7 @@ or RPM repo host).
     elementpath     |elementpath|
     hexdump         |hexdump|
     honcho          |honcho|
+    lib4sbom        |lib4sbom|
     line_profiler   |line_profiler|
     logwatcher      |logwatcher|
     packageurl      |packageurl-python|
@@ -85,6 +86,10 @@ or RPM repo host).
 .. |elementpath| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/elementpath.yml/badge.svg
     :target: https://github.com/sissaschool/elementpath
     :alt: elementpath RPM status
+
+.. |lib4sbom| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/lib4sbom.yml/badge.svg
+    :target: https://github.com/anthonyharrison/lib4sbom
+    :alt: lib4sbom RPM status
 
 .. |pyeztrace| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/eztrace.yml/badge.svg
     :target: https://github.com/jeffersonaaron25/PyEzTrace

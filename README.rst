@@ -43,6 +43,7 @@ or RPM repo host).
     bitmask         |bitmask|
     daemonizer      |daemonizer|
     diskcache       |diskcache|
+    distro2sbom     |distro2sbom|
     elementpath     |elementpath|
     hexdump         |hexdump|
     honcho          |honcho|
@@ -82,6 +83,10 @@ or RPM repo host).
 .. |diskcache| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/diskcache.yml/badge.svg
     :target: http://www.grantjenks.com/docs/diskcache/
     :alt: diskcache RPM status
+
+.. |distro2sbom| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/distro2sbom.yml/badge.svg
+    :target: https://github.com/anthonyharrison/distro2SBOM
+    :alt: distro2sbom RPM status
 
 .. |elementpath| image:: https://github.com/VCTLabs/el9-rpm-toolbox/actions/workflows/elementpath.yml/badge.svg
     :target: https://github.com/sissaschool/elementpath

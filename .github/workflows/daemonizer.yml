@@ -27,6 +27,7 @@ jobs:
       - name: Get package version
         id: spec_ver
         run: |
+          wget -O specs/python-daemonizer.spec https://github.com/sarnold/python-daemonizer/raw/refs/heads/master/packaging/el9/daemonizer.spec
           version=$(make version)
           echo "version=${version}" >> $GITHUB_OUTPUT
           echo Version from spec: $version
@@ -65,7 +66,7 @@ jobs:
     # Work-around for https://github.com/actions/runner-images/issues/6775
     - name: Change Owner of Container Working Directory
       if: matrix.image
-      run: chown root.root .
+      run: chown root:root .
 
     - name: Check version
       env:
@@ -75,6 +76,8 @@ jobs:
 
     - name: Install deps for rpm builds (centos/rocky)
       run: |
+        dnf install -y wget
+        wget -O specs/python-daemonizer.spec https://github.com/sarnold/python-daemonizer/raw/refs/heads/master/packaging/el9/daemonizer.spec
         bash scripts/install_deps_el9.sh
 
     - name: Build rpm pkgs
@@ -109,7 +112,7 @@ jobs:
         path: packages
 
     - name: List Artifacts
-      run: find . -maxdepth 3 -name \*.rpm
+      run: ls -laR packages
 
     - name: Fetch tags
       run: git fetch --tags --prune --quiet
